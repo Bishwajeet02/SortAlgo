@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: #f2f6fc; /* Soft whitish background */
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  perspective: 1000px;
+}
+
+/* Bubbles via pseudo-elements */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 60%),
+              radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  animation: floatBubbles 20s linear infinite;
+  z-index: -1;
+  transform: translateZ(0);
+}
+
+body::after {
+  animation-delay: 10s;
+}
+
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg) scale(1);
+  }
+}
+body{
+   background: rgba(0, 0, 0, 0.85);
+}
